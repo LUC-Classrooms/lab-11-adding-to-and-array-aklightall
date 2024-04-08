@@ -12,11 +12,11 @@ function setup() {
 }
 
 function draw() {
-  background(200);
+  background(200); // Background color
   
   for(let i = 0; i < dots.length; i++){
-    dots[i].move(); 
-    dots[i].display(); 
+    dots[i].move(); // Move the dot 
+    dots[i].display(); // Display the dot 
   }
   textSize(24);
   fill(100, 0, 200);
