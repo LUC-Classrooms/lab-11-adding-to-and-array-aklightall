@@ -7,8 +7,8 @@ Step 2 - add comments explaining each line of code in this sketch.
 var dots = new Array(1);
 
 function setup() {
-  createCanvas(500, 300); 
-  dots[0] = new Dot(width/2, height/2);
+  createCanvas(500, 300); // Create canvas dimensions
+  dots[0] = new Dot(width/2, height/2); // Set dot at the center of the canvas
 }
 
 function draw() {
@@ -25,10 +25,11 @@ function draw() {
 }
 
 function mousePressed(){
-  let obj = new Dot(mouseX, mouseY);
+  let obj = new Dot(mouseX, mouseY); // Create a new dot object at the mouse position
   
   /* add a line of code that adds "obj" to the "dots" array. Use the .push() method of the dots array object to append the new "obj" to the end of an existing array. Check the Array.push() documentation first to make sure you are using it correctly.
   */
+ dots.push(obj);
 
 }
 
@@ -37,21 +38,21 @@ function Dot(X, Y){
   
   this.x = X;
   this.y = Y;
-  this.w = random (20, 50);
-  this.sx = random(-5, 5);
-  this.sy = random(-5, 5);
-  this.r = random(0, 255);
-  this.g = random(0, 255);
-  this.b = random(0, 255);
+  this.w = random (20, 50); // Set a random width for the dot
+  this.sx = random(-5, 5); // Set a random horizontal speed for the dot 
+  this.sy = random(-5, 5); // Set a ranfom vertical speed for the dot
+  this.r = random(0, 255); // Set a random red color for the dot
+  this.g = random(0, 255); // Set a random green color for the dot 
+  this.b = random(0, 255); // Set a random blue color for the dot
   
   this.display = function(){
-    fill(this.r, this.g, this.b);
-    ellipse(this.x, this.y, this.w, this.w);
+    fill(this.r, this.g, this.b); // Set fill color
+    ellipse(this.x, this.y, this.w, this.w); // Draw an eclipse
   }
   
   this.move = function(){
-    this.x += this.sx;
-    this.y += this.sy;
+    this.x += this.sx; // Show horizontal position
+    this.y += this.sy; // Show vertical position
     
     if (this.x < 0 || this.x > width){
         this.sx *= -1;
